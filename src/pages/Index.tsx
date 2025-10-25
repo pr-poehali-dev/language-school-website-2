@@ -736,89 +736,6 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="teachers" className="py-24 px-6 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Наши преподаватели</h2>
-            <p className="text-xl text-muted-foreground">Профессионалы с международным опытом</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="hover:shadow-xl transition-all border-2">
-              <CardHeader>
-                <div className="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-primary/20 to-secondary/20">
-                  <img 
-                    src="https://cdn.poehali.dev/projects/2c540b2e-1e79-4cae-9e17-13ff189e3191/files/94e4456e-44d0-4f97-833b-406fe618384b.jpg" 
-                    alt="李明 (Li Ming)"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-2xl">李明 (Li Ming)</CardTitle>
-                <CardDescription className="text-base">Преподаватель китайского языка</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6">
-                  Носитель языка, магистр филологии Пекинского университета. 8 лет опыта преподавания. Специализация: HSK, деловой китайский.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-primary/10 text-primary">HSK 1-6</Badge>
-                  <Badge className="bg-primary/10 text-primary">Деловой</Badge>
-                  <Badge className="bg-primary/10 text-primary">Носитель</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-xl transition-all border-2">
-              <CardHeader>
-                <div className="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-primary/20 to-secondary/20">
-                  <img 
-                    src="https://cdn.poehali.dev/projects/2c540b2e-1e79-4cae-9e17-13ff189e3191/files/5f6dde91-8a38-4a95-94a6-bd8792ddc244.jpg" 
-                    alt="Michael Johnson"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-2xl">Michael Johnson</CardTitle>
-                <CardDescription className="text-base">Преподаватель английского языка</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6">
-                  Носитель языка из США. 12 лет опыта. Сертификаты CELTA, DELTA. Эксперт по подготовке к IELTS и TOEFL. Бизнес-английский.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-primary/10 text-primary">IELTS</Badge>
-                  <Badge className="bg-primary/10 text-primary">TOEFL</Badge>
-                  <Badge className="bg-primary/10 text-primary">Business</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-xl transition-all border-2">
-              <CardHeader>
-                <div className="w-full aspect-square rounded-2xl overflow-hidden mb-4 bg-gradient-to-br from-primary/20 to-secondary/20">
-                  <img 
-                    src="https://cdn.poehali.dev/projects/2c540b2e-1e79-4cae-9e17-13ff189e3191/files/12f6b567-c9e6-4cdf-aa0a-b3c7a7a21794.jpg" 
-                    alt="Анна Смирнова"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardTitle className="text-2xl">Анна Смирнова</CardTitle>
-                <CardDescription className="text-base">Преподаватель английского языка</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-6">
-                  Кандидат филологических наук. 10 лет опыта. Специализация: академический английский, подготовка к экзаменам, переводоведение.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-primary/10 text-primary">Academic</Badge>
-                  <Badge className="bg-primary/10 text-primary">Cambridge</Badge>
-                  <Badge className="bg-primary/10 text-primary">Translation</Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       <section id="contact" className="py-24 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
@@ -834,11 +751,21 @@ export default function Index() {
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <div className="font-bold text-lg mb-1">Адрес</div>
+                    <div className="text-muted-foreground text-lg">г. Москва, ул. Нижняя Масловка, д. 9</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="Phone" className="text-primary" size={24} />
                   </div>
                   <div>
                     <div className="font-bold text-lg mb-1">Телефон</div>
-                    <div className="text-muted-foreground text-lg">+7 (999) 123-45-67</div>
+                    <div className="text-muted-foreground text-lg">+7 (909) 903-03-19</div>
                   </div>
                 </div>
                 
@@ -848,17 +775,7 @@ export default function Index() {
                   </div>
                   <div>
                     <div className="font-bold text-lg mb-1">Email</div>
-                    <div className="text-muted-foreground text-lg">info@dialecta.school</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="MessageCircle" className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg mb-1">Telegram</div>
-                    <div className="text-muted-foreground text-lg">@dialecta_school</div>
+                    <div className="text-muted-foreground text-lg">hellochina777@yandex.ru</div>
                   </div>
                 </div>
 
