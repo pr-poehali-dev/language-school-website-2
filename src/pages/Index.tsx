@@ -14,6 +14,38 @@ export default function Index() {
     message: ''
   });
 
+  const [calculatorData, setCalculatorData] = useState({
+    translationType: 'written',
+    language: 'english',
+    volume: 3
+  });
+
+  const calculatePrice = () => {
+    if (calculatorData.translationType === 'written') {
+      const volume = Math.max(3, calculatorData.volume);
+      if (calculatorData.language === 'english') {
+        const minPrice = volume * 800;
+        const maxPrice = volume * 1200;
+        return { min: minPrice, max: maxPrice };
+      } else {
+        const minPrice = volume * 1000;
+        const maxPrice = volume * 1500;
+        return { min: minPrice, max: maxPrice };
+      }
+    } else {
+      const volume = Math.max(4, calculatorData.volume);
+      if (calculatorData.language === 'english') {
+        const price = volume * 2200;
+        return { min: price, max: price };
+      } else {
+        const price = volume * 3800;
+        return { min: price, max: price };
+      }
+    }
+  };
+
+  const priceResult = calculatePrice();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
@@ -407,6 +439,111 @@ export default function Index() {
             <p className="text-xl text-muted-foreground">Профессиональные переводы от опытных специалистов</p>
           </div>
           
+          <div className="mb-16">
+            <Card className="border-2 shadow-xl bg-gradient-to-br from-primary/5 to-secondary/5 max-w-4xl mx-auto">
+              <CardHeader>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
+                    <Icon name="Calculator" className="text-white" size={32} />
+                  </div>
+                  <div>
+                    <CardTitle className="text-3xl">Калькулятор стоимости</CardTitle>
+                    <CardDescription className="text-base mt-1">Рассчитайте примерную стоимость перевода</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div>
+                      <label className="block text-sm font-semibold mb-3">Тип перевода</label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <Button
+                          type="button"
+                          variant={calculatorData.translationType === 'written' ? 'default' : 'outline'}
+                          className={calculatorData.translationType === 'written' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+                          onClick={() => setCalculatorData({...calculatorData, translationType: 'written', volume: 3})}
+                        >
+                          <Icon name="FileText" className="mr-2" size={18} />
+                          Письменный
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={calculatorData.translationType === 'oral' ? 'default' : 'outline'}
+                          className={calculatorData.translationType === 'oral' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+                          onClick={() => setCalculatorData({...calculatorData, translationType: 'oral', volume: 4})}
+                        >
+                          <Icon name="Mic" className="mr-2" size={18} />
+                          Устный
+                        </Button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold mb-3">Язык</label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <Button
+                          type="button"
+                          variant={calculatorData.language === 'english' ? 'default' : 'outline'}
+                          className={calculatorData.language === 'english' ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white' : ''}
+                          onClick={() => setCalculatorData({...calculatorData, language: 'english'})}
+                        >
+                          🇬🇧 Английский
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={calculatorData.language === 'chinese' ? 'default' : 'outline'}
+                          className={calculatorData.language === 'chinese' ? 'bg-gradient-to-r from-red-500 to-yellow-500 text-white' : ''}
+                          onClick={() => setCalculatorData({...calculatorData, language: 'chinese'})}
+                        >
+                          🇨🇳 Китайский
+                        </Button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold mb-3">
+                        {calculatorData.translationType === 'written' ? 'Количество страниц' : 'Количество часов'}
+                      </label>
+                      <Input
+                        type="number"
+                        min={calculatorData.translationType === 'written' ? 3 : 4}
+                        value={calculatorData.volume}
+                        onChange={(e) => setCalculatorData({...calculatorData, volume: parseInt(e.target.value) || (calculatorData.translationType === 'written' ? 3 : 4)})}
+                        className="h-12 text-lg"
+                      />
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Минимальный заказ: {calculatorData.translationType === 'written' ? '3 страницы' : '4 часа'}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-8 flex flex-col justify-center border-2 border-primary/20">
+                    <div className="text-center">
+                      <div className="text-sm text-muted-foreground mb-2">Стоимость</div>
+                      {priceResult.min === priceResult.max ? (
+                        <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                          {priceResult.min.toLocaleString('ru-RU')}₽
+                        </div>
+                      ) : (
+                        <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                          {priceResult.min.toLocaleString('ru-RU')}₽ - {priceResult.max.toLocaleString('ru-RU')}₽
+                        </div>
+                      )}
+                      <div className="text-sm text-muted-foreground mb-6">
+                        за {calculatorData.volume} {calculatorData.translationType === 'written' ? (calculatorData.volume === 1 ? 'страницу' : calculatorData.volume < 5 ? 'страницы' : 'страниц') : (calculatorData.volume === 1 ? 'час' : calculatorData.volume < 5 ? 'часа' : 'часов')}
+                      </div>
+                      <Button className="w-full bg-gradient-to-r from-primary to-secondary" size="lg">
+                        <Icon name="Send" className="mr-2" size={20} />
+                        Заказать перевод
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-10 mb-12">
             <Card className="hover:shadow-xl transition-all border-2">
               <CardHeader>
