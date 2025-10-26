@@ -53,14 +53,15 @@ export default function Index() {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://functions.poehali.dev/1c6d3c44-87e9-4c86-b017-22ba533ad4e3', {
+      const response = await fetch('https://functions.poehali.dev/a89d611a-3804-4d11-a137-5932439cbc3a', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          ...formData,
-          formType: 'contact'
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email
         })
       });
       
