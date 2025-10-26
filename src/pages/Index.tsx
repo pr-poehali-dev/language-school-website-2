@@ -92,211 +92,212 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b shadow-sm">
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+          <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             DIALECTA
           </div>
-          <div className="hidden md:flex gap-8">
-            <a href="#courses" className="text-foreground hover:text-primary transition-colors font-medium">Курсы</a>
-            <a href="#pricing" className="text-foreground hover:text-primary transition-colors font-medium">Цены</a>
-            <a href="#translation" className="text-foreground hover:text-primary transition-colors font-medium">Переводы</a>
-            <a href="#masterclasses" className="text-foreground hover:text-primary transition-colors font-medium">Мастер-классы</a>
-            <a href="#teachers" className="text-foreground hover:text-primary transition-colors font-medium">Преподаватели</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
+          <div className="hidden lg:flex gap-6 xl:gap-8">
+            <a href="#courses" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Курсы</a>
+            <a href="#pricing" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Цены</a>
+            <a href="#translation" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Переводы</a>
+            <a href="#masterclasses" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Мастер-классы</a>
+            <a href="#teachers" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Преподаватели</a>
+            <a href="#contact" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </div>
-          <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-gradient-to-r from-primary to-secondary">Записаться</Button>
+          <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-gradient-to-r from-primary to-secondary text-sm sm:text-base px-4 sm:px-6">Записаться</Button>
         </nav>
       </header>
 
-      <section className="pt-32 pb-24 px-6 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
         <div className="container mx-auto text-center max-w-5xl animate-fade-in">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-            Изучайте языки <br />
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+            Изучайте языки <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               с удовольствием
             </span>
           </h1>
-          <p className="text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 leading-relaxed max-w-3xl mx-auto px-4">
             Онлайн школа иностранных языков DIALECTA — ваш путь к свободному владению китайским и английским языками
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-primary to-secondary">
-              <Icon name="Sparkles" className="mr-2" size={22} />
-              Первое занятие бесплатно
+          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
+            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary">
+              <Icon name="Sparkles" className="mr-2" size={20} />
+              <span className="hidden sm:inline">Первое занятие бесплатно</span>
+              <span className="sm:hidden">Бесплатно</span>
             </Button>
-            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" variant="outline" className="text-lg px-10 py-6 border-2">
-              <Icon name="MessageCircle" className="mr-2" size={22} />
+            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" variant="outline" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 border-2">
+              <Icon name="MessageCircle" className="mr-2" size={20} />
               Узнать больше
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             <Card className="hover:shadow-xl transition-all hover:-translate-y-1 border-2">
               <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-4">
-                  <Icon name="GraduationCap" className="text-white" size={32} />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                  <Icon name="GraduationCap" className="text-white" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Опытные педагоги</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl">Опытные педагоги</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">Преподаватели с международными сертификатами и многолетним опытом</p>
+                <p className="text-muted-foreground text-base sm:text-lg">Преподаватели с международными сертификатами и многолетним опытом</p>
               </CardContent>
             </Card>
             
             <Card className="hover:shadow-xl transition-all hover:-translate-y-1 border-2">
               <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-4">
-                  <Icon name="Video" className="text-white" size={32} />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                  <Icon name="Video" className="text-white" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Онлайн формат</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl">Онлайн формат</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">Занимайтесь где угодно в удобное для вас время</p>
+                <p className="text-muted-foreground text-base sm:text-lg">Занимайтесь где угодно в удобное для вас время</p>
               </CardContent>
             </Card>
             
-            <Card className="hover:shadow-xl transition-all hover:-translate-y-1 border-2">
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-1 border-2 sm:col-span-2 lg:col-span-1">
               <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-4">
-                  <Icon name="Users" className="text-white" size={32} />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+                  <Icon name="Users" className="text-white" size={28} />
                 </div>
-                <CardTitle className="text-2xl">Разговорный клуб</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl">Разговорный клуб</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-lg">Бесплатный доступ при покупке абонемента</p>
+                <p className="text-muted-foreground text-base sm:text-lg">Бесплатный доступ при покупке абонемента</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      <section id="courses" className="py-24 px-6 bg-muted/30">
+      <section id="courses" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Наши курсы</h2>
-            <p className="text-xl text-muted-foreground">Выберите направление для изучения</p>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Наши курсы</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">Выберите направление для изучения</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
             <Card className="overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-2">
-              <div className="h-56 bg-gradient-to-br from-blue-500 via-blue-600 to-red-600 flex items-center justify-center relative overflow-hidden">
+              <div className="h-40 sm:h-48 md:h-56 bg-gradient-to-br from-blue-500 via-blue-600 to-red-600 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>
-                <span className="text-9xl relative z-10">🇬🇧</span>
+                <span className="text-6xl sm:text-7xl md:text-9xl relative z-10">🇬🇧</span>
               </div>
               <CardHeader>
-                <CardTitle className="text-3xl">Английский язык</CardTitle>
-                <CardDescription className="text-lg">Для работы, учёбы и путешествий</CardDescription>
+                <CardTitle className="text-2xl sm:text-3xl">Английский язык</CardTitle>
+                <CardDescription className="text-base sm:text-lg">Для работы, учёбы и путешествий</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Общий и бизнес-английский</span>
+                <div className="space-y-3 sm:space-y-4 mb-6">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Общий и бизнес-английский</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Подготовка к IELTS, TOEFL, Cambridge</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Подготовка к IELTS, TOEFL, Cambridge</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Разговорная практика с носителями</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Разговорная практика с носителями</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Индивидуальная программа обучения</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Индивидуальная программа обучения</span>
                   </div>
                 </div>
-                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6" size="lg">Записаться на пробный урок</Button>
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-base sm:text-lg py-5 sm:py-6" size="lg">Записаться на пробный урок</Button>
               </CardContent>
             </Card>
 
             <Card className="overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 border-2">
-              <div className="h-56 bg-gradient-to-br from-red-600 via-red-500 to-yellow-500 flex items-center justify-center relative overflow-hidden">
+              <div className="h-40 sm:h-48 md:h-56 bg-gradient-to-br from-red-600 via-red-500 to-yellow-500 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/10"></div>
-                <span className="text-9xl relative z-10">🇨🇳</span>
+                <span className="text-6xl sm:text-7xl md:text-9xl relative z-10">🇨🇳</span>
               </div>
               <CardHeader>
-                <CardTitle className="text-3xl">Китайский язык</CardTitle>
-                <CardDescription className="text-lg">От начального до продвинутого уровня</CardDescription>
+                <CardTitle className="text-2xl sm:text-3xl">Китайский язык</CardTitle>
+                <CardDescription className="text-base sm:text-lg">От начального до продвинутого уровня</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Изучение иероглифов и пиньинь</span>
+                <div className="space-y-3 sm:space-y-4 mb-6">
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Изучение иероглифов и пиньинь</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Подготовка к HSK всех уровней</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Подготовка к HSK всех уровней</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Деловой китайский для бизнеса</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Деловой китайский для бизнеса</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={24} />
-                    <span className="text-lg">Погружение в китайскую культуру</span>
+                  <div className="flex items-start gap-2 sm:gap-3">
+                    <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-lg">Погружение в китайскую культуру</span>
                   </div>
                 </div>
-                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6" size="lg">Записаться на пробный урок</Button>
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-base sm:text-lg py-5 sm:py-6" size="lg">Записаться на пробный урок</Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      <section id="pricing" className="py-24 px-6">
+      <section id="pricing" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Тарифы на обучение</h2>
-            <p className="text-xl text-muted-foreground">Прозрачные цены и выгодные абонементы</p>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Тарифы на обучение</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">Прозрачные цены и выгодные абонементы</p>
           </div>
           
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold mb-8 text-center">Английский язык</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="mb-16 sm:mb-20">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Английский язык</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               <Card className="hover:shadow-xl transition-all border-2 relative overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-blue-600"></div>
-                <CardHeader className="pt-8">
-                  <CardTitle className="text-2xl">Пробное занятие</CardTitle>
-                  <div className="mt-6">
-                    <span className="text-5xl font-bold text-primary">Бесплатно</span>
+                <CardHeader className="pt-6 sm:pt-8">
+                  <CardTitle className="text-xl sm:text-2xl">Пробное занятие</CardTitle>
+                  <div className="mt-4 sm:mt-6">
+                    <span className="text-4xl sm:text-5xl font-bold text-primary">Бесплатно</span>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3">
-                      <Icon name="Check" className="text-primary mt-1" size={20} />
-                      <span>45 минут занятия</span>
+                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                      <span className="text-sm sm:text-base">45 минут занятия</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Icon name="Check" className="text-primary mt-1" size={20} />
-                      <span>Определение уровня</span>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                      <span className="text-sm sm:text-base">Определение уровня</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Icon name="Check" className="text-primary mt-1" size={20} />
-                      <span>Индивидуальная программа</span>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                      <span className="text-sm sm:text-base">Индивидуальная программа</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <Icon name="Check" className="text-primary mt-1" size={20} />
-                      <span>Знакомство с преподавателем</span>
+                    <li className="flex items-start gap-2 sm:gap-3">
+                      <Icon name="Check" className="text-primary mt-1 flex-shrink-0" size={18} />
+                      <span className="text-sm sm:text-base">Знакомство с преподавателем</span>
                     </li>
                   </ul>
-                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Записаться</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-base sm:text-lg py-5 sm:py-6">Записаться</Button>
                 </CardContent>
               </Card>
 
               <Card className="hover:shadow-xl transition-all border-2 relative overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-blue-600"></div>
-                <CardHeader className="pt-8">
-                  <CardTitle className="text-2xl">Разовое занятие</CardTitle>
-                  <div className="mt-6">
-                    <span className="text-5xl font-bold">2300₽</span>
-                    <span className="text-muted-foreground text-lg">/урок</span>
+                <CardHeader className="pt-6 sm:pt-8">
+                  <CardTitle className="text-xl sm:text-2xl">Разовое занятие</CardTitle>
+                  <div className="mt-4 sm:mt-6">
+                    <span className="text-4xl sm:text-5xl font-bold">2300₽</span>
+                    <span className="text-muted-foreground text-base sm:text-lg">/урок</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -322,23 +323,23 @@ export default function Index() {
                 </CardContent>
               </Card>
 
-              <Card className="border-primary border-4 hover:shadow-2xl transition-all relative">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                  <Badge className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 text-base font-bold shadow-lg">
+              <Card className="border-primary border-4 hover:shadow-2xl transition-all relative sm:col-span-2 lg:col-span-1">
+                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 z-10">
+                  <Badge className="bg-gradient-to-r from-primary to-secondary text-white px-4 sm:px-6 py-1.5 sm:py-2 text-sm sm:text-base font-bold shadow-lg">
                     Выгодно!
                   </Badge>
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-blue-600"></div>
-                <CardHeader className="pt-8">
-                  <CardTitle className="text-2xl">Абонемент</CardTitle>
-                  <div className="mt-6">
-                    <span className="text-5xl font-bold text-primary">16 000₽</span>
-                    <span className="text-muted-foreground text-lg">/месяц</span>
+                <CardHeader className="pt-6 sm:pt-8">
+                  <CardTitle className="text-xl sm:text-2xl">Абонемент</CardTitle>
+                  <div className="mt-4 sm:mt-6">
+                    <span className="text-4xl sm:text-5xl font-bold text-primary">16 000₽</span>
+                    <span className="text-muted-foreground text-base sm:text-lg">/месяц</span>
                   </div>
-                  <div className="mt-2 text-sm text-muted-foreground">8 занятий · 2 раза в неделю</div>
+                  <div className="mt-2 text-xs sm:text-sm text-muted-foreground">8 занятий · 2 раза в неделю</div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                     <li className="flex items-start gap-3">
                       <Icon name="Check" className="text-primary mt-1" size={20} />
                       <span>8 занятий по 45 минут</span>
@@ -363,8 +364,8 @@ export default function Index() {
           </div>
 
           <div>
-            <h3 className="text-3xl font-bold mb-8 text-center">Китайский язык</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Китайский язык</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               <Card className="hover:shadow-xl transition-all border-2 relative overflow-hidden">
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-500 to-yellow-500"></div>
                 <CardHeader className="pt-8">
@@ -470,32 +471,32 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="translation" className="py-24 px-6 bg-muted/30">
+      <section id="translation" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-muted/30">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Услуги переводов</h2>
-            <p className="text-xl text-muted-foreground">Профессиональные переводы от опытных специалистов</p>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Услуги переводов</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">Профессиональные переводы от опытных специалистов</p>
           </div>
           
-          <div className="mb-16">
+          <div className="mb-12 sm:mb-16">
             <Card className="border-2 shadow-xl bg-gradient-to-br from-primary/5 to-secondary/5 max-w-4xl mx-auto">
               <CardHeader>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
-                    <Icon name="Calculator" className="text-white" size={32} />
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="Calculator" className="text-white" size={24} />
                   </div>
                   <div>
-                    <CardTitle className="text-3xl">Калькулятор стоимости</CardTitle>
-                    <CardDescription className="text-base mt-1">Рассчитайте примерную стоимость перевода</CardDescription>
+                    <CardTitle className="text-xl sm:text-2xl md:text-3xl">Калькулятор стоимости</CardTitle>
+                    <CardDescription className="text-sm sm:text-base mt-1">Рассчитайте примерную стоимость перевода</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+                  <div className="space-y-5 sm:space-y-6">
                     <div>
-                      <label className="block text-sm font-semibold mb-3">Тип перевода</label>
-                      <div className="grid grid-cols-2 gap-3">
+                      <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Тип перевода</label>
+                      <div className="grid grid-cols-2 gap-2 sm:gap-3">
                         <Button
                           type="button"
                           variant={calculatorData.translationType === 'written' ? 'default' : 'outline'}
@@ -518,8 +519,8 @@ export default function Index() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold mb-3">Язык</label>
-                      <div className="grid grid-cols-2 gap-3">
+                      <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Язык</label>
+                      <div className="grid grid-cols-2 gap-2 sm:gap-3">
                         <Button
                           type="button"
                           variant={calculatorData.language === 'english' ? 'default' : 'outline'}
@@ -540,7 +541,7 @@ export default function Index() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold mb-3">
+                      <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
                         {calculatorData.translationType === 'written' ? 'Количество страниц' : 'Количество часов'}
                       </label>
                       <Input
@@ -548,7 +549,7 @@ export default function Index() {
                         min={calculatorData.translationType === 'written' ? 3 : 4}
                         value={calculatorData.volume}
                         onChange={(e) => setCalculatorData({...calculatorData, volume: parseInt(e.target.value) || (calculatorData.translationType === 'written' ? 3 : 4)})}
-                        className="h-12 text-lg"
+                        className="h-10 sm:h-12 text-base sm:text-lg"
                       />
                       <p className="text-xs text-muted-foreground mt-2">
                         Минимальный заказ: {calculatorData.translationType === 'written' ? '3 страницы' : '4 часа'}
@@ -556,23 +557,23 @@ export default function Index() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-8 flex flex-col justify-center border-2 border-primary/20">
+                  <div className="bg-white rounded-xl p-6 sm:p-8 flex flex-col justify-center border-2 border-primary/20">
                     <div className="text-center">
-                      <div className="text-sm text-muted-foreground mb-2">Стоимость</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground mb-2">Стоимость</div>
                       {priceResult.min === priceResult.max ? (
-                        <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                        <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
                           {priceResult.min.toLocaleString('ru-RU')}₽
                         </div>
                       ) : (
-                        <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
                           {priceResult.min.toLocaleString('ru-RU')}₽ - {priceResult.max.toLocaleString('ru-RU')}₽
                         </div>
                       )}
-                      <div className="text-sm text-muted-foreground mb-6">
+                      <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
                         за {calculatorData.volume} {calculatorData.translationType === 'written' ? (calculatorData.volume === 1 ? 'страницу' : calculatorData.volume < 5 ? 'страницы' : 'страниц') : (calculatorData.volume === 1 ? 'час' : calculatorData.volume < 5 ? 'часа' : 'часов')}
                       </div>
-                      <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary" size="lg">
-                        <Icon name="Send" className="mr-2" size={20} />
+                      <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary text-sm sm:text-base" size="lg">
+                        <Icon name="Send" className="mr-2" size={18} />
                         Заказать перевод
                       </Button>
                     </div>
@@ -582,7 +583,7 @@ export default function Index() {
             </Card>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 mb-10 sm:mb-12">
             <Card className="hover:shadow-xl transition-all border-2">
               <CardHeader>
                 <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6">
@@ -704,34 +705,34 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="masterclasses" className="py-24 px-6">
+      <section id="masterclasses" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Мастер-классы</h2>
-            <p className="text-xl text-muted-foreground">Уникальные тематические занятия от наших преподавателей</p>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Мастер-классы</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">Уникальные тематические занятия от наших преподавателей</p>
           </div>
           
           <Card className="border-2 hover:shadow-xl transition-all bg-gradient-to-br from-primary/5 to-secondary/5">
             <CardHeader>
-              <div className="flex items-start gap-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="Lightbulb" className="text-white" size={48} />
+              <div className="flex items-start gap-4 sm:gap-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="Lightbulb" className="text-white" size={32} />
                 </div>
                 <div className="flex-1">
-                  <CardTitle className="text-3xl mb-3">Специальные программы</CardTitle>
-                  <CardDescription className="text-lg">
+                  <CardTitle className="text-xl sm:text-2xl md:text-3xl mb-2 sm:mb-3">Специальные программы</CardTitle>
+                  <CardDescription className="text-base sm:text-lg">
                     Наши преподаватели регулярно проводят тематические мастер-классы по актуальным темам
                   </CardDescription>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl">
-                  <Icon name="BookOpen" className="text-primary flex-shrink-0 mt-1" size={24} />
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl">
+                  <Icon name="BookOpen" className="text-primary flex-shrink-0 mt-1" size={20} />
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Деловая коммуникация</h4>
-                    <p className="text-muted-foreground text-sm">Презентации, переговоры, email-этикет</p>
+                    <h4 className="font-bold text-base sm:text-lg mb-1">Деловая коммуникация</h4>
+                    <p className="text-muted-foreground text-xs sm:text-sm">Презентации, переговоры, email-этикет</p>
                   </div>
                 </div>
                 
@@ -760,12 +761,12 @@ export default function Index() {
                 </div>
               </div>
               
-              <div className="bg-white p-6 rounded-xl text-center">
-                <p className="text-lg mb-6">
+              <div className="bg-white p-4 sm:p-6 rounded-xl text-center">
+                <p className="text-base sm:text-lg mb-4 sm:mb-6">
                   Программы мастер-классов составляются индивидуально и отправляются по вашей заявке
                 </p>
-                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-primary to-secondary">
-                  <Icon name="Mail" className="mr-2" size={22} />
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary">
+                  <Icon name="Mail" className="mr-2" size={20} />
                   Запросить программу
                 </Button>
               </div>
@@ -774,56 +775,56 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="contact" className="py-24 px-6">
+      <section id="contact" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">Свяжитесь с нами</h2>
-            <p className="text-xl text-muted-foreground">Мы ответим на все ваши вопросы</p>
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Свяжитесь с нами</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">Мы ответим на все ваши вопросы</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
             <Card className="border-2">
               <CardHeader>
-                <CardTitle className="text-2xl">Контактная информация</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl">Контактная информация</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="MapPin" className="text-primary" size={24} />
+              <CardContent className="space-y-5 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <div className="font-bold text-lg mb-1">Адрес</div>
-                    <div className="text-muted-foreground text-lg">г. Москва, ул. Нижняя Масловка, д. 9</div>
+                    <div className="font-bold text-base sm:text-lg mb-1">Адрес</div>
+                    <div className="text-muted-foreground text-sm sm:text-base md:text-lg">г. Москва, ул. Нижняя Масловка, д. 9</div>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Phone" className="text-primary" size={24} />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="Phone" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <div className="font-bold text-lg mb-1">Телефон</div>
-                    <div className="text-muted-foreground text-lg">+7 (909) 903-03-19</div>
+                    <div className="font-bold text-base sm:text-lg mb-1">Телефон</div>
+                    <div className="text-muted-foreground text-sm sm:text-base md:text-lg">+7 (909) 903-03-19</div>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Mail" className="text-primary" size={24} />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="Mail" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <div className="font-bold text-lg mb-1">Email</div>
-                    <div className="text-muted-foreground text-lg">hellochina777@yandex.ru</div>
+                    <div className="font-bold text-base sm:text-lg mb-1">Email</div>
+                    <div className="text-muted-foreground text-sm sm:text-base md:text-lg break-all">hellochina777@yandex.ru</div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Clock" className="text-primary" size={24} />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="Clock" className="text-primary" size={20} />
                   </div>
                   <div>
-                    <div className="font-bold text-lg mb-1">Время работы</div>
-                    <div className="text-muted-foreground text-lg">Пн-Вс: 09:00 - 21:00</div>
+                    <div className="font-bold text-base sm:text-lg mb-1">Время работы</div>
+                    <div className="text-muted-foreground text-sm sm:text-base md:text-lg">Пн-Вс: 09:00 - 21:00</div>
                   </div>
                 </div>
               </CardContent>
@@ -831,17 +832,17 @@ export default function Index() {
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle className="text-2xl">Отправить заявку</CardTitle>
-                <CardDescription className="text-base">Заполните форму и мы свяжемся с вами</CardDescription>
+                <CardTitle className="text-xl sm:text-2xl">Отправить заявку</CardTitle>
+                <CardDescription className="text-sm sm:text-base">Заполните форму и мы свяжемся с вами</CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   <div>
                     <Input 
                       placeholder="Ваше имя" 
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="h-12 text-base"
+                      className="h-11 sm:h-12 text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -851,7 +852,7 @@ export default function Index() {
                       placeholder="Email" 
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="h-12 text-base"
+                      className="h-11 sm:h-12 text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -861,7 +862,7 @@ export default function Index() {
                       placeholder="Телефон" 
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="h-12 text-base"
+                      className="h-11 sm:h-12 text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -871,12 +872,12 @@ export default function Index() {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className="text-base"
+                      className="text-sm sm:text-base"
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full text-lg py-6 bg-gradient-to-r from-primary to-secondary" size="lg">
-                    <Icon name="Send" className="mr-2" size={20} />
+                  <Button type="submit" className="w-full text-base sm:text-lg py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary" size="lg">
+                    <Icon name="Send" className="mr-2" size={18} />
                     Отправить заявку
                   </Button>
                 </form>
@@ -886,14 +887,14 @@ export default function Index() {
         </div>
       </section>
 
-      <footer className="bg-foreground text-background py-16 px-6">
+      <footer className="bg-foreground text-background py-12 sm:py-16 px-4 sm:px-6">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-10 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
             <div>
-              <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <div className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 DIALECTA
               </div>
-              <p className="text-background/70 text-lg">
+              <p className="text-background/70 text-base sm:text-lg">
                 Онлайн школа иностранных языков и профессиональных переводов
               </p>
             </div>
