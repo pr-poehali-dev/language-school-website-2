@@ -46,9 +46,31 @@ export default function Index() {
 
   const priceResult = calculatePrice();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/1c6d3c44-87e9-4c86-b017-22ba533ad4e3', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'contact'
+        })
+      });
+      
+      if (response.ok) {
+        alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+    }
   };
 
   return (
@@ -66,7 +88,7 @@ export default function Index() {
             <a href="#teachers" className="text-foreground hover:text-primary transition-colors font-medium">Преподаватели</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </div>
-          <Button className="bg-gradient-to-r from-primary to-secondary">Записаться</Button>
+          <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-gradient-to-r from-primary to-secondary">Записаться</Button>
         </nav>
       </header>
 
@@ -82,11 +104,11 @@ export default function Index() {
             Онлайн школа иностранных языков DIALECTA — ваш путь к свободному владению китайским и английским языками
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-primary to-secondary">
+            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-primary to-secondary">
               <Icon name="Sparkles" className="mr-2" size={22} />
               Первое занятие бесплатно
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-10 py-6 border-2">
+            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" variant="outline" className="text-lg px-10 py-6 border-2">
               <Icon name="MessageCircle" className="mr-2" size={22} />
               Узнать больше
             </Button>
@@ -172,7 +194,7 @@ export default function Index() {
                     <span className="text-lg">Индивидуальная программа обучения</span>
                   </div>
                 </div>
-                <Button className="w-full text-lg py-6" size="lg">Записаться на пробный урок</Button>
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6" size="lg">Записаться на пробный урок</Button>
               </CardContent>
             </Card>
 
@@ -204,7 +226,7 @@ export default function Index() {
                     <span className="text-lg">Погружение в китайскую культуру</span>
                   </div>
                 </div>
-                <Button className="w-full text-lg py-6" size="lg">Записаться на пробный урок</Button>
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6" size="lg">Записаться на пробный урок</Button>
               </CardContent>
             </Card>
           </div>
@@ -248,7 +270,7 @@ export default function Index() {
                       <span>Знакомство с преподавателем</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="w-full text-lg py-6">Записаться</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Записаться</Button>
                 </CardContent>
               </Card>
 
@@ -280,7 +302,7 @@ export default function Index() {
                       <span>Гибкий график</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="w-full text-lg py-6">Выбрать</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Выбрать</Button>
                 </CardContent>
               </Card>
 
@@ -318,7 +340,7 @@ export default function Index() {
                       <span className="font-bold text-secondary">Разговорный клуб в подарок!</span>
                     </li>
                   </ul>
-                  <Button className="w-full text-lg py-6 bg-gradient-to-r from-primary to-secondary">Купить абонемент</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6 bg-gradient-to-r from-primary to-secondary">Купить абонемент</Button>
                 </CardContent>
               </Card>
             </div>
@@ -354,7 +376,7 @@ export default function Index() {
                       <span>Знакомство с преподавателем</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="w-full text-lg py-6">Записаться</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Записаться</Button>
                 </CardContent>
               </Card>
 
@@ -386,7 +408,7 @@ export default function Index() {
                       <span>Гибкий график</span>
                     </li>
                   </ul>
-                  <Button variant="outline" className="w-full text-lg py-6">Выбрать</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Выбрать</Button>
                 </CardContent>
               </Card>
 
@@ -424,7 +446,7 @@ export default function Index() {
                       <span className="font-bold text-secondary">Разговорный клуб в подарок!</span>
                     </li>
                   </ul>
-                  <Button className="w-full text-lg py-6 bg-gradient-to-r from-primary to-secondary">Купить абонемент</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6 bg-gradient-to-r from-primary to-secondary">Купить абонемент</Button>
                 </CardContent>
               </Card>
             </div>
@@ -533,7 +555,7 @@ export default function Index() {
                       <div className="text-sm text-muted-foreground mb-6">
                         за {calculatorData.volume} {calculatorData.translationType === 'written' ? (calculatorData.volume === 1 ? 'страницу' : calculatorData.volume < 5 ? 'страницы' : 'страниц') : (calculatorData.volume === 1 ? 'час' : calculatorData.volume < 5 ? 'часа' : 'часов')}
                       </div>
-                      <Button className="w-full bg-gradient-to-r from-primary to-secondary" size="lg">
+                      <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary" size="lg">
                         <Icon name="Send" className="mr-2" size={20} />
                         Заказать перевод
                       </Button>
@@ -659,7 +681,7 @@ export default function Index() {
                   </ul>
                 </div>
 
-                <Button className="w-full text-lg py-6" size="lg">Заказать перевод</Button>
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6" size="lg">Заказать перевод</Button>
               </CardContent>
             </Card>
           </div>
@@ -726,7 +748,7 @@ export default function Index() {
                 <p className="text-lg mb-6">
                   Программы мастер-классов составляются индивидуально и отправляются по вашей заявке
                 </p>
-                <Button size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-primary to-secondary">
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-lg px-10 py-6 bg-gradient-to-r from-primary to-secondary">
                   <Icon name="Mail" className="mr-2" size={22} />
                   Запросить программу
                 </Button>
