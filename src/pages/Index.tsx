@@ -5,8 +5,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { useToast } from '@/hooks/use-toast';
 
 export default function Index() {
+  const { toast } = useToast();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -62,14 +65,26 @@ export default function Index() {
       });
       
       if (response.ok) {
-        alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+        toast({
+          title: '✅ Заявка отправлена!',
+          description: 'Спасибо! Мы свяжемся с вами в ближайшее время.',
+          variant: 'default'
+        });
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
-        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+        toast({
+          title: '❌ Ошибка отправки',
+          description: 'Произошла ошибка. Пожалуйста, попробуйте позже.',
+          variant: 'destructive'
+        });
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+      toast({
+        title: '❌ Ошибка отправки',
+        description: 'Произошла ошибка. Пожалуйста, попробуйте позже.',
+        variant: 'destructive'
+      });
     }
   };
 
