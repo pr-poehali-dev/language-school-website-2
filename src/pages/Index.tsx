@@ -884,7 +884,7 @@ export default function Index() {
               <ul className="space-y-3 text-background/70">
                 <li>+7 (999) 123-45-67</li>
                 <li>info@dialecta.school</li>
-                <li>@dialecta_school</li>
+                <li>@HelloDialecta</li>
                 <li>Пн-Вс: 09:00 - 21:00</li>
               </ul>
             </div>
