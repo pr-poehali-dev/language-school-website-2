@@ -882,8 +882,8 @@ export default function Index() {
             <div>
               <h3 className="font-bold text-xl mb-4">Контакты</h3>
               <ul className="space-y-3 text-background/70">
-                <li>+7 (999) 123-45-67</li>
-                <li>info@dialecta.school</li>
+                <li>+7 (909) 903-03-19</li>
+                <li>hellochina777@yandex.ru</li>
                 <li>@HelloDialecta</li>
                 <li>Пн-Вс: 09:00 - 21:00</li>
               </ul>
