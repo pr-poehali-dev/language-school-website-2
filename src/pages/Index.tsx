@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 
 export default function Index() {
   const { toast } = useToast();
+  const [showScrollTop, setShowScrollTop] = useState(false);
   
   const [formData, setFormData] = useState({
     name: '',
@@ -49,6 +50,34 @@ export default function Index() {
 
   const priceResult = calculatePrice();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const triggerConfetti = () => {
+    const colors = ['#8b5cf6', '#ec4899'];
+    for (let i = 0; i < 100; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.3 + 's';
+        confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+      }, i * 30);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -66,6 +95,10 @@ export default function Index() {
       });
       
       if (response.ok) {
+        if ('vibrate' in navigator) {
+          navigator.vibrate(200);
+        }
+        triggerConfetti();
         toast({
           title: '✅ Заявка отправлена!',
           description: 'Спасибо! Мы свяжемся с вами в ближайшее время.',
@@ -103,7 +136,7 @@ export default function Index() {
             <a href="#masterclasses" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Мастер-классы</a>
             <a href="#contact" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </div>
-          <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-gradient-to-r from-primary to-secondary text-sm sm:text-base px-4 sm:px-6">Записаться</Button>
+          <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-gradient-to-r from-primary to-secondary text-sm sm:text-base px-4 sm:px-6 btn-hover-effect">Записаться</Button>
         </nav>
       </header>
 
@@ -119,12 +152,12 @@ export default function Index() {
             Онлайн школа иностранных языков DIALECTA — ваш путь к свободному владению китайским и английским языками
           </p>
           <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-4">
-            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary">
+            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary btn-hover-effect">
               <Icon name="Sparkles" className="mr-2" size={20} />
               <span className="hidden sm:inline">Первое занятие бесплатно</span>
               <span className="sm:hidden">Бесплатно</span>
             </Button>
-            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" variant="outline" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 border-2">
+            <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" variant="outline" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 border-2 btn-hover-effect">
               <Icon name="MessageCircle" className="mr-2" size={20} />
               Узнать больше
             </Button>
@@ -286,7 +319,7 @@ export default function Index() {
                       <span className="text-sm sm:text-base">Знакомство с преподавателем</span>
                     </li>
                   </ul>
-                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-base sm:text-lg py-5 sm:py-6">Записаться</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-base sm:text-lg py-5 sm:py-6 btn-hover-effect">Записаться</Button>
                 </CardContent>
               </Card>
 
@@ -318,7 +351,7 @@ export default function Index() {
                       <span>Гибкий график</span>
                     </li>
                   </ul>
-                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Выбрать</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6 btn-hover-effect">Выбрать</Button>
                 </CardContent>
               </Card>
 
@@ -392,7 +425,7 @@ export default function Index() {
                       <span>Знакомство с преподавателем</span>
                     </li>
                   </ul>
-                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Записаться</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6 btn-hover-effect">Записаться</Button>
                 </CardContent>
               </Card>
 
@@ -424,7 +457,7 @@ export default function Index() {
                       <span>Гибкий график</span>
                     </li>
                   </ul>
-                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6">Выбрать</Button>
+                  <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-lg py-6 btn-hover-effect">Выбрать</Button>
                 </CardContent>
               </Card>
 
@@ -491,15 +524,15 @@ export default function Index() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-                  <div className="space-y-5 sm:space-y-6">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+                  <div className="space-y-4 sm:space-y-5">
                     <div>
-                      <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Тип перевода</label>
-                      <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                      <label className="block text-sm font-semibold mb-3">Тип перевода</label>
+                      <div className="grid grid-cols-2 gap-3">
                         <Button
                           type="button"
                           variant={calculatorData.translationType === 'written' ? 'default' : 'outline'}
-                          className={calculatorData.translationType === 'written' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+                          className={calculatorData.translationType === 'written' ? 'bg-gradient-to-r from-primary to-secondary btn-hover-effect' : 'btn-hover-effect'}
                           onClick={() => setCalculatorData({...calculatorData, translationType: 'written', volume: 3})}
                         >
                           <Icon name="FileText" className="mr-2" size={18} />
@@ -508,7 +541,7 @@ export default function Index() {
                         <Button
                           type="button"
                           variant={calculatorData.translationType === 'oral' ? 'default' : 'outline'}
-                          className={calculatorData.translationType === 'oral' ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+                          className={calculatorData.translationType === 'oral' ? 'bg-gradient-to-r from-primary to-secondary btn-hover-effect' : 'btn-hover-effect'}
                           onClick={() => setCalculatorData({...calculatorData, translationType: 'oral', volume: 4})}
                         >
                           <Icon name="Mic" className="mr-2" size={18} />
@@ -518,12 +551,12 @@ export default function Index() {
                     </div>
 
                     <div>
-                      <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Язык</label>
-                      <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                      <label className="block text-sm font-semibold mb-3">Язык</label>
+                      <div className="grid grid-cols-2 gap-3">
                         <Button
                           type="button"
                           variant={calculatorData.language === 'english' ? 'default' : 'outline'}
-                          className={calculatorData.language === 'english' ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white' : ''}
+                          className={calculatorData.language === 'english' ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white btn-hover-effect' : 'btn-hover-effect'}
                           onClick={() => setCalculatorData({...calculatorData, language: 'english'})}
                         >
                           🇬🇧 Английский
@@ -531,7 +564,7 @@ export default function Index() {
                         <Button
                           type="button"
                           variant={calculatorData.language === 'chinese' ? 'default' : 'outline'}
-                          className={calculatorData.language === 'chinese' ? 'bg-gradient-to-r from-red-500 to-yellow-500 text-white' : ''}
+                          className={calculatorData.language === 'chinese' ? 'bg-gradient-to-r from-red-500 to-yellow-500 text-white btn-hover-effect' : 'btn-hover-effect'}
                           onClick={() => setCalculatorData({...calculatorData, language: 'chinese'})}
                         >
                           🇨🇳 Китайский
@@ -540,7 +573,7 @@ export default function Index() {
                     </div>
 
                     <div>
-                      <label className="block text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+                      <label className="block text-sm font-semibold mb-3">
                         {calculatorData.translationType === 'written' ? 'Количество страниц' : 'Количество часов'}
                       </label>
                       <Input
@@ -548,7 +581,7 @@ export default function Index() {
                         min={calculatorData.translationType === 'written' ? 3 : 4}
                         value={calculatorData.volume}
                         onChange={(e) => setCalculatorData({...calculatorData, volume: parseInt(e.target.value) || (calculatorData.translationType === 'written' ? 3 : 4)})}
-                        className="h-10 sm:h-12 text-base sm:text-lg"
+                        className="h-12 text-lg"
                       />
                       <p className="text-xs text-muted-foreground mt-2">
                         Минимальный заказ: {calculatorData.translationType === 'written' ? '3 страницы' : '4 часа'}
@@ -556,22 +589,22 @@ export default function Index() {
                     </div>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 sm:p-8 flex flex-col justify-center border-2 border-primary/20">
+                  <div className="bg-gradient-to-br from-white to-primary/5 rounded-xl p-6 sm:p-8 md:p-10 flex flex-col justify-center border-2 border-primary/30 shadow-lg">
                     <div className="text-center">
-                      <div className="text-xs sm:text-sm text-muted-foreground mb-2">Стоимость</div>
+                      <div className="text-sm text-muted-foreground mb-3">Стоимость</div>
                       {priceResult.min === priceResult.max ? (
-                        <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                        <div className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-3">
                           {priceResult.min.toLocaleString('ru-RU')}₽
                         </div>
                       ) : (
-                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
-                          {priceResult.min.toLocaleString('ru-RU')}₽ - {priceResult.max.toLocaleString('ru-RU')}₽
+                        <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-3 leading-tight">
+                          {priceResult.min.toLocaleString('ru-RU')}₽ - {priceResult.max.toLocaleString('ru-RU')}₽
                         </div>
                       )}
-                      <div className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
+                      <div className="text-sm text-muted-foreground mb-6">
                         за {calculatorData.volume} {calculatorData.translationType === 'written' ? (calculatorData.volume === 1 ? 'страницу' : calculatorData.volume < 5 ? 'страницы' : 'страниц') : (calculatorData.volume === 1 ? 'час' : calculatorData.volume < 5 ? 'часа' : 'часов')}
                       </div>
-                      <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary text-sm sm:text-base" size="lg">
+                      <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary text-base btn-hover-effect" size="lg">
                         <Icon name="Send" className="mr-2" size={18} />
                         Заказать перевод
                       </Button>
@@ -638,7 +671,7 @@ export default function Index() {
                   </ul>
                 </div>
 
-                <Button className="w-full text-lg py-6" size="lg">Заказать перевод</Button>
+                <Button className="w-full text-lg py-6 btn-hover-effect" size="lg">Заказать перевод</Button>
               </CardContent>
             </Card>
 
@@ -697,7 +730,7 @@ export default function Index() {
                   </ul>
                 </div>
 
-                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6" size="lg">Заказать перевод</Button>
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full text-lg py-6 btn-hover-effect" size="lg">Заказать перевод</Button>
               </CardContent>
             </Card>
           </div>
@@ -727,34 +760,34 @@ export default function Index() {
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-xl">
-                  <Icon name="BookOpen" className="text-primary flex-shrink-0 mt-1" size={20} />
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-xl h-full">
+                  <Icon name="BookOpen" className="text-primary flex-shrink-0 mt-1" size={22} />
                   <div>
-                    <h4 className="font-bold text-base sm:text-lg mb-1">Деловая коммуникация</h4>
-                    <p className="text-muted-foreground text-xs sm:text-sm">Презентации, переговоры, email-этикет</p>
+                    <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-2">Деловая коммуникация</h4>
+                    <p className="text-muted-foreground text-sm">Презентации, переговоры, email-этикет</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl">
-                  <Icon name="Globe" className="text-primary flex-shrink-0 mt-1" size={24} />
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-xl h-full">
+                  <Icon name="Globe" className="text-primary flex-shrink-0 mt-1" size={22} />
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Культура и традиции</h4>
+                    <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-2">Культура и традиции</h4>
                     <p className="text-muted-foreground text-sm">Погружение в менталитет и обычаи</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl">
-                  <Icon name="Briefcase" className="text-primary flex-shrink-0 mt-1" size={24} />
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-xl h-full">
+                  <Icon name="Briefcase" className="text-primary flex-shrink-0 mt-1" size={22} />
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Бизнес-кейсы</h4>
+                    <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-2">Бизнес-кейсы</h4>
                     <p className="text-muted-foreground text-sm">Разбор реальных ситуаций из практики</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl">
-                  <Icon name="MessageSquare" className="text-primary flex-shrink-0 mt-1" size={24} />
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-white rounded-xl h-full">
+                  <Icon name="MessageSquare" className="text-primary flex-shrink-0 mt-1" size={22} />
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Разговорные практикумы</h4>
+                    <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-2">Разговорные практикумы</h4>
                     <p className="text-muted-foreground text-sm">Интенсивная разговорная практика</p>
                   </div>
                 </div>
@@ -764,7 +797,7 @@ export default function Index() {
                 <p className="text-base sm:text-lg mb-4 sm:mb-6">
                   Программы мастер-классов составляются индивидуально и отправляются по вашей заявке
                 </p>
-                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary">
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary btn-hover-effect">
                   <Icon name="Mail" className="mr-2" size={20} />
                   Запросить программу
                 </Button>
@@ -865,7 +898,7 @@ export default function Index() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full text-base sm:text-lg py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary" size="lg">
+                  <Button type="submit" className="w-full text-base sm:text-lg py-5 sm:py-6 bg-gradient-to-r from-primary to-secondary btn-hover-effect" size="lg">
                     <Icon name="Send" className="mr-2" size={18} />
                     Отправить заявку
                   </Button>
@@ -876,21 +909,21 @@ export default function Index() {
         </div>
       </section>
 
-      <footer className="bg-foreground text-background py-12 sm:py-16 px-4 sm:px-6">
+      <footer className="bg-foreground text-background py-6 sm:py-8 px-4 sm:px-6">
         <div className="container mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6">
             <div>
-              <div className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <div className="text-xl sm:text-2xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 DIALECTA
               </div>
-              <p className="text-background/70 text-base sm:text-lg">
+              <p className="text-background/70 text-sm">
                 Онлайн школа иностранных языков и профессиональных переводов
               </p>
             </div>
             
             <div>
-              <h3 className="font-bold text-xl mb-4">Обучение</h3>
-              <ul className="space-y-3 text-background/70">
+              <h3 className="font-bold text-base mb-3">Обучение</h3>
+              <ul className="space-y-2 text-background/70 text-sm">
                 <li><a href="#courses" className="hover:text-background transition-colors">Английский язык</a></li>
                 <li><a href="#courses" className="hover:text-background transition-colors">Китайский язык</a></li>
                 <li><a href="#pricing" className="hover:text-background transition-colors">Тарифы</a></li>
@@ -899,17 +932,16 @@ export default function Index() {
             </div>
             
             <div>
-              <h3 className="font-bold text-xl mb-4">Услуги</h3>
-              <ul className="space-y-3 text-background/70">
+              <h3 className="font-bold text-base mb-3">Услуги</h3>
+              <ul className="space-y-2 text-background/70 text-sm">
                 <li><a href="#translation" className="hover:text-background transition-colors">Письменный перевод</a></li>
                 <li><a href="#translation" className="hover:text-background transition-colors">Устный перевод</a></li>
-                <li><a href="#teachers" className="hover:text-background transition-colors">Преподаватели</a></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-bold text-xl mb-4">Контакты</h3>
-              <ul className="space-y-3 text-background/70">
+              <h3 className="font-bold text-base mb-3">Контакты</h3>
+              <ul className="space-y-2 text-background/70 text-sm">
                 <li>+7 (909) 903-03-19</li>
                 <li>hellochina777@yandex.ru</li>
                 <li>@HelloDialecta</li>
@@ -918,11 +950,21 @@ export default function Index() {
             </div>
           </div>
           
-          <div className="border-t border-background/20 pt-8 text-center text-background/70">
-            <p className="text-lg">© 2024 DIALECTA. Все права защищены.</p>
+          <div className="border-t border-background/20 pt-4 text-center text-background/70">
+            <p className="text-sm">© 2024 DIALECTA. Все права защищены.</p>
           </div>
         </div>
       </footer>
+      
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-primary to-secondary text-white shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center"
+          aria-label="Прокрутить наверх"
+        >
+          <Icon name="ArrowUp" size={20} />
+        </button>
+      )}
     </div>
   );
 }
