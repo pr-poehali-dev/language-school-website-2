@@ -101,7 +101,6 @@ export default function Index() {
             <a href="#pricing" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Цены</a>
             <a href="#translation" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Переводы</a>
             <a href="#masterclasses" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Мастер-классы</a>
-            <a href="#teachers" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Преподаватели</a>
             <a href="#contact" className="text-sm xl:text-base text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
           </div>
           <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-gradient-to-r from-primary to-secondary text-sm sm:text-base px-4 sm:px-6">Записаться</Button>
@@ -788,16 +787,6 @@ export default function Index() {
                 <CardTitle className="text-xl sm:text-2xl">Контактная информация</CardTitle>
               </CardHeader>
               <CardContent className="space-y-5 sm:space-y-6">
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="MapPin" className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-base sm:text-lg mb-1">Адрес</div>
-                    <div className="text-muted-foreground text-sm sm:text-base md:text-lg">г. Москва, ул. Нижняя Масловка, д. 9</div>
-                  </div>
-                </div>
-                
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="Phone" className="text-primary" size={20} />
