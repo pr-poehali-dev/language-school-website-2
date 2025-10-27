@@ -835,16 +835,6 @@ export default function Index() {
                 
                 <div className="flex items-start gap-3 sm:gap-4">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Mail" className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <div className="font-bold text-base sm:text-lg mb-1">Email</div>
-                    <div className="text-muted-foreground text-sm sm:text-base md:text-lg break-all">hellochina777@yandex.ru</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="Clock" className="text-primary" size={20} />
                   </div>
                   <div>
@@ -946,7 +936,6 @@ export default function Index() {
               <h3 className="font-bold text-base mb-3">Контакты</h3>
               <ul className="space-y-2 text-background/70 text-sm">
                 <li>+7 (909) 903-03-19</li>
-                <li>hellochina777@yandex.ru</li>
                 <li>@HelloDialecta</li>
                 <li>Пн-Вс: 09:00 - 21:00</li>
               </ul>
