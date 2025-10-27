@@ -953,8 +953,17 @@ export default function Index() {
             </div>
           </div>
           
-          <div className="border-t border-background/20 pt-4 text-center text-background/70">
-            <p className="text-sm">© 2024 DIALECTA. Все права защищены.</p>
+          <div className="border-t border-background/20 pt-6 text-center">
+            <a 
+              href="https://t.me/+ivviZnqIlXs1Mzky" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 mb-6 btn-hover-effect text-base font-semibold"
+            >
+              <Icon name="Send" size={22} />
+              Наш Telegram-канал
+            </a>
+            <p className="text-background/70 text-sm">© 2024 DIALECTA. Все права защищены.</p>
           </div>
         </div>
       </footer>
