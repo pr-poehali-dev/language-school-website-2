@@ -300,7 +300,7 @@ export default function Index() {
                 <CardHeader className="pt-6 sm:pt-8">
                   <CardTitle className="text-xl sm:text-2xl">Пробное занятие</CardTitle>
                   <div className="mt-4 sm:mt-6">
-                    <span className="text-4xl sm:text-5xl font-bold text-primary">Бесплатно</span>
+                    <span className="sm:text-5xl font-bold text-primary text-3xl">Бесплатно</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -368,7 +368,7 @@ export default function Index() {
                 <CardHeader className="pt-6 sm:pt-8">
                   <CardTitle className="text-xl sm:text-2xl">Абонемент</CardTitle>
                   <div className="mt-4 sm:mt-6">
-                    <span className="text-4xl sm:text-5xl font-bold text-primary">16 000₽</span>
+                    <span className="sm:text-5xl font-bold text-primary text-3xl">16 000₽</span>
                     <span className="text-muted-foreground text-base sm:text-lg">/месяц</span>
                   </div>
                   <div className="mt-2 text-xs sm:text-sm text-muted-foreground">8 занятий · 2 раза в неделю</div>
@@ -406,7 +406,7 @@ export default function Index() {
                 <CardHeader className="pt-8">
                   <CardTitle className="text-2xl">Пробное занятие</CardTitle>
                   <div className="mt-6">
-                    <span className="text-5xl font-bold text-primary">Бесплатно</span>
+                    <span className="font-bold text-primary text-3xl">Бесплатно</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -437,7 +437,7 @@ export default function Index() {
                 <CardHeader className="pt-8">
                   <CardTitle className="text-2xl">Разовое занятие</CardTitle>
                   <div className="mt-6">
-                    <span className="text-5xl font-bold">2600₽</span>
+                    <span className="font-bold text-3xl">2600₽</span>
                     <span className="text-muted-foreground text-lg">/урок</span>
                   </div>
                 </CardHeader>
@@ -474,7 +474,7 @@ export default function Index() {
                 <CardHeader className="pt-8">
                   <CardTitle className="text-2xl">Абонемент</CardTitle>
                   <div className="mt-6">
-                    <span className="text-5xl font-bold text-primary">20 000₽</span>
+                    <span className="font-bold text-primary text-3xl">20 000₽</span>
                     <span className="text-muted-foreground text-lg">/месяц</span>
                   </div>
                   <div className="mt-2 text-sm text-muted-foreground">8 занятий · 2 раза в неделю</div>
