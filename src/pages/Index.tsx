@@ -331,7 +331,7 @@ export default function Index() {
                 <CardHeader className="pt-6 sm:pt-8">
                   <CardTitle className="text-xl sm:text-2xl">Разовое занятие</CardTitle>
                   <div className="mt-4 sm:mt-6">
-                    <span className="text-4xl sm:text-5xl font-bold">2300₽</span>
+                    <span className="sm:text-5xl font-bold text-3xl">2300₽</span>
                     <span className="text-muted-foreground text-base sm:text-lg">/урок</span>
                   </div>
                 </CardHeader>
