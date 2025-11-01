@@ -5,14 +5,14 @@ import Icon from '@/components/ui/icon';
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
-      <div className="container mx-auto">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Абонементы</h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">Выгодные пакеты занятий</p>
+    <section id="pricing" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">Абонементы</h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">Выгодные пакеты занятий</p>
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
           <Card className="hover:shadow-2xl transition-all hover:-translate-y-2 border-2 relative">
             <CardHeader>
               <CardTitle className="text-2xl sm:text-3xl mb-2">4 занятия</CardTitle>

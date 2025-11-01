@@ -5,86 +5,86 @@ import Icon from '@/components/ui/icon';
 
 export default function MasterclassesSection() {
   return (
-    <section id="masterclasses" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+    <section id="masterclasses" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Мастер-классы</h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">Групповые занятия для практики языка</p>
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">Мастер-классы</h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">Групповые занятия для практики языка</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          <Card className="hover:shadow-2xl transition-all hover:-translate-y-2 border-2 border-primary/50">
-            <CardHeader>
-              <Badge className="w-fit mb-2 bg-gradient-to-r from-primary to-secondary">Популярно</Badge>
-              <CardTitle className="text-2xl sm:text-3xl flex items-center gap-2">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+          <Card className="hover:shadow-2xl transition-all hover:-translate-y-2 border-2 border-primary/50 flex flex-col">
+            <CardHeader className="p-4 sm:p-5 md:p-6">
+              <Badge className="w-fit mb-1 sm:mb-2 bg-gradient-to-r from-primary to-secondary text-xs sm:text-sm">Популярно</Badge>
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl flex items-center gap-2">
                 <span>Разговорный клуб</span>
-                <span className="text-3xl sm:text-4xl">💬</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl">💬</span>
               </CardTitle>
-              <CardDescription className="text-base sm:text-lg">Практика разговорной речи в группе</CardDescription>
+              <CardDescription className="text-sm sm:text-base md:text-lg">Практика разговорной речи в группе</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-3 sm:space-y-4 mb-6">
+            <CardContent className="flex-1 flex flex-col p-4 sm:p-5 md:p-6 pt-0">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-5 md:mb-6">
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="Users" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Группы до 8 человек</span>
+                  <Icon name="Users" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Группы до 8 человек</span>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="Clock" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">2 часа живого общения</span>
+                  <Icon name="Clock" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">2 часа живого общения</span>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="Calendar" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Каждую неделю</span>
+                  <Icon name="Calendar" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Каждую неделю</span>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="Gift" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Бесплатно при покупке абонемента</span>
+                  <Icon name="Gift" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Бесплатно при покупке абонемента</span>
                 </div>
               </div>
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-6 mb-6">
-                <div className="text-3xl sm:text-4xl font-bold text-center mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-4 sm:p-5 md:p-6 mb-4 sm:mb-5 md:mb-6">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-1 sm:mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Бесплатно
                 </div>
-                <div className="text-sm text-center text-muted-foreground">при покупке любого абонемента</div>
+                <div className="text-xs sm:text-sm text-center text-muted-foreground">при покупке любого абонемента</div>
               </div>
-              <Button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary text-base sm:text-lg py-5 sm:py-6 btn-hover-effect">
+              <Button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary text-sm sm:text-base md:text-lg py-4 sm:py-5 md:py-6 btn-hover-effect min-h-[44px] mt-auto">
                 Присоединиться
               </Button>
             </CardContent>
           </Card>
           
-          <Card className="hover:shadow-2xl transition-all hover:-translate-y-2 border-2">
-            <CardHeader>
-              <CardTitle className="text-2xl sm:text-3xl flex items-center gap-2">
+          <Card className="hover:shadow-2xl transition-all hover:-translate-y-2 border-2 flex flex-col">
+            <CardHeader className="p-4 sm:p-5 md:p-6">
+              <CardTitle className="text-xl sm:text-2xl md:text-3xl flex items-center gap-2">
                 <span>Тематические вебинары</span>
-                <span className="text-3xl sm:text-4xl">🎓</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl">🎓</span>
               </CardTitle>
-              <CardDescription className="text-base sm:text-lg">Специальные темы и навыки</CardDescription>
+              <CardDescription className="text-sm sm:text-base md:text-lg">Специальные темы и навыки</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-3 sm:space-y-4 mb-6">
+            <CardContent className="flex-1 flex flex-col p-4 sm:p-5 md:p-6 pt-0">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-5 md:mb-6">
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="BookOpen" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Бизнес-английский</span>
+                  <Icon name="BookOpen" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Бизнес-английский</span>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="BookOpen" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Китайская культура</span>
+                  <Icon name="BookOpen" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Китайская культура</span>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="BookOpen" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Подготовка к экзаменам</span>
+                  <Icon name="BookOpen" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Подготовка к экзаменам</span>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="BookOpen" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <span className="text-base sm:text-lg">Разговорные клише</span>
+                  <Icon name="BookOpen" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
+                  <span className="text-sm sm:text-base md:text-lg">Разговорные клише</span>
                 </div>
               </div>
-              <div className="bg-muted rounded-xl p-6 mb-6">
-                <div className="text-3xl sm:text-4xl font-bold text-center mb-2">500₽</div>
-                <div className="text-sm text-center text-muted-foreground">за вебинар</div>
+              <div className="bg-muted rounded-xl p-4 sm:p-5 md:p-6 mb-4 sm:mb-5 md:mb-6">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-1 sm:mb-2">500₽</div>
+                <div className="text-xs sm:text-sm text-center text-muted-foreground">за вебинар</div>
               </div>
-              <Button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-base sm:text-lg py-5 sm:py-6 btn-hover-effect">
+              <Button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} variant="outline" className="w-full text-sm sm:text-base md:text-lg py-4 sm:py-5 md:py-6 btn-hover-effect min-h-[44px] mt-auto">
                 Узнать расписание
               </Button>
             </CardContent>
