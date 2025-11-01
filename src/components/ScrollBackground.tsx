@@ -14,7 +14,7 @@ export default function ScrollBackground() {
 
   const leftImageTransform = Math.min(scrollY * 0.3, 400);
   const rightImageTransform = Math.min(scrollY * 0.3, 400);
-  const opacity = Math.min(scrollY * 0.001, 0.4);
+  const opacity = Math.min(scrollY * 0.001, 0.55);
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -30,6 +30,7 @@ export default function ScrollBackground() {
             src="https://cdn.poehali.dev/files/c26c75c8-d633-49ad-80d3-7dac19e6092e.jpg"
             alt=""
             className="w-full h-full object-contain"
+            style={{ filter: 'brightness(1.15) saturate(1.3)' }}
           />
           <div className="absolute inset-0 noise-overlay" />
         </div>
@@ -47,6 +48,7 @@ export default function ScrollBackground() {
             src="https://cdn.poehali.dev/files/a5e3c3ca-0bfd-43ad-9ee8-2c5d23325ead.jpg"
             alt=""
             className="w-full h-full object-contain"
+            style={{ filter: 'brightness(1.15) saturate(1.3)' }}
           />
           <div className="absolute inset-0 noise-overlay" />
         </div>
