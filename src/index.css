@@ -140,19 +140,6 @@
     animation: fadeInUp 0.8s ease-out forwards;
   }
 
-  @keyframes fadeInSlow {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 0.15;
-    }
-  }
-
-  .animate-fade-in-slow {
-    animation: fadeInSlow 2s ease-out forwards;
-  }
-
   @keyframes confetti-fall {
     0% {
       transform: translateY(-100vh) rotate(0deg);
