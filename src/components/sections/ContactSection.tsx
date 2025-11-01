@@ -76,48 +76,48 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
+    <section id="contact" className="py-16 sm:py-20 md:py-24 px-6 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">Контакты</h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">Свяжитесь с нами удобным способом</p>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Контакты</h2>
+          <p className="text-lg md:text-xl text-muted-foreground">Свяжитесь с нами удобным способом</p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-          <div className="space-y-4 sm:space-y-6 md:space-y-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+          <div className="space-y-8">
             <Card className="border-2">
-              <CardHeader className="p-4 sm:p-5 md:p-6">
-                <CardTitle className="text-xl sm:text-2xl md:text-3xl flex items-center gap-2 sm:gap-3">
-                  <Icon name="MapPin" className="text-primary" size={24} />
+              <CardHeader>
+                <CardTitle className="text-3xl flex items-center gap-3">
+                  <Icon name="MapPin" className="text-primary" size={28} />
                   Контактная информация
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3 sm:space-y-4 md:space-y-6 p-4 sm:p-5 md:p-6 pt-0">
-                <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                  <Icon name="Phone" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={20} />
+              <CardContent className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <Icon name="Phone" className="text-primary mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <div className="font-medium text-sm sm:text-base md:text-lg mb-0.5 sm:mb-1">Телефон</div>
-                    <a href="tel:+79099030319" className="text-base sm:text-lg md:text-xl text-primary hover:underline">+7 (909) 903-03-19</a>
+                    <div className="font-medium text-lg mb-1">Телефон</div>
+                    <a href="tel:+79099030319" className="text-xl text-primary hover:underline">+7 (909) 903-03-19</a>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                  <Icon name="Clock" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={20} />
+                <div className="flex items-start gap-4">
+                  <Icon name="Clock" className="text-primary mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <div className="font-medium text-sm sm:text-base md:text-lg mb-0.5 sm:mb-1">Время работы</div>
-                    <div className="text-sm sm:text-base md:text-lg text-muted-foreground">Пн-Вс: 09:00 - 21:00</div>
+                    <div className="font-medium text-lg mb-1">Время работы</div>
+                    <div className="text-lg text-muted-foreground">Пн-Вс: 09:00 - 21:00</div>
                   </div>
                 </div>
                 
-                <div className="pt-3 sm:pt-4 md:pt-6 border-t">
-                  <div className="font-medium text-sm sm:text-base md:text-lg mb-3 sm:mb-4">Мы в социальных сетях</div>
+                <div className="pt-6 border-t">
+                  <div className="font-medium text-lg mb-4">Мы в социальных сетях</div>
                   <a 
                     href="https://t.me/+ivviZnqIlXs1Mzky" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg font-semibold min-h-[44px]"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg font-semibold"
                   >
-                    <Icon name="Send" size={18} />
+                    <Icon name="Send" size={20} />
                     Наш Telegram-канал
                   </a>
                 </div>
@@ -125,85 +125,85 @@ export default function ContactSection() {
             </Card>
             
             <Card className="border-2 bg-gradient-to-br from-primary/5 to-secondary/5">
-              <CardHeader className="p-4 sm:p-5 md:p-6">
-                <CardTitle className="text-lg sm:text-xl md:text-2xl">Почему выбирают нас?</CardTitle>
+              <CardHeader>
+                <CardTitle className="text-2xl">Почему выбирают нас?</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2 sm:space-y-3 p-4 sm:p-5 md:p-6 pt-0">
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Первое занятие бесплатно</span>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Первое занятие бесплатно</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Индивидуальный подход</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Индивидуальный подход</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Гибкое расписание</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Гибкое расписание</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Современные методики</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Современные методики</span>
                 </div>
               </CardContent>
             </Card>
           </div>
           
           <Card className="border-2 shadow-lg" id="contact-form">
-            <CardHeader className="p-4 sm:p-5 md:p-6">
-              <CardTitle className="text-xl sm:text-2xl md:text-3xl">Оставьте заявку</CardTitle>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-1 sm:mt-2">Мы свяжемся с вами в ближайшее время</p>
+            <CardHeader>
+              <CardTitle className="text-3xl">Оставьте заявку</CardTitle>
+              <p className="text-lg text-muted-foreground mt-2">Мы свяжемся с вами в ближайшее время</p>
             </CardHeader>
-            <CardContent className="p-4 sm:p-5 md:p-6 pt-0">
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-6">
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm sm:text-base md:text-lg font-medium mb-1.5 sm:mb-2">Ваше имя</label>
+                  <label className="block text-lg font-medium mb-2">Ваше имя</label>
                   <Input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Иван Иванов"
-                    className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-5 min-h-[44px]"
+                    className="text-lg py-6"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm sm:text-base md:text-lg font-medium mb-1.5 sm:mb-2">Телефон</label>
+                  <label className="block text-lg font-medium mb-2">Телефон</label>
                   <Input
                     type="tel"
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+7 (999) 123-45-67"
-                    className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-5 min-h-[44px]"
+                    className="text-lg py-6"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm sm:text-base md:text-lg font-medium mb-1.5 sm:mb-2">Email (необязательно)</label>
+                  <label className="block text-lg font-medium mb-2">Email</label>
                   <Input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="example@email.com"
-                    className="text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-5 min-h-[44px]"
+                    className="text-lg py-6"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm sm:text-base md:text-lg font-medium mb-1.5 sm:mb-2">Сообщение (необязательно)</label>
+                  <label className="block text-lg font-medium mb-2">Сообщение (необязательно)</label>
                   <Textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Расскажите, что вас интересует..."
+                    placeholder="Расскажите о ваших целях и пожеланиях..."
                     rows={4}
-                    className="text-sm sm:text-base md:text-lg resize-none min-h-[100px]"
+                    className="text-lg resize-none"
                   />
                 </div>
                 
-                <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary text-sm sm:text-base md:text-lg py-4 sm:py-5 md:py-6 btn-hover-effect min-h-[44px]">
-                  <Icon name="Send" className="mr-1 sm:mr-2" size={18} />
+                <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary text-lg py-6 btn-hover-effect">
+                  <Icon name="Send" className="mr-2" size={20} />
                   Отправить заявку
                 </Button>
               </form>

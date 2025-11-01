@@ -37,117 +37,117 @@ export default function TranslationSection() {
   const priceResult = calculatePrice();
 
   return (
-    <section id="translation" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 bg-muted/30">
+    <section id="translation" className="py-16 sm:py-20 md:py-24 px-6 bg-muted/30">
       <div className="container mx-auto">
-        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">Переводы</h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">Профессиональный перевод документов</p>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Переводы</h2>
+          <p className="text-lg md:text-xl text-muted-foreground">Профессиональный перевод документов</p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <Card className="overflow-hidden hover:shadow-2xl transition-all border-2 flex flex-col">
-            <CardHeader className="bg-gradient-to-br from-primary/5 to-secondary/5 p-4 sm:p-5 md:p-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-2 sm:mb-3">
-                <Icon name="FileText" className="text-white" size={20} />
+            <CardHeader className="bg-gradient-to-br from-primary/5 to-secondary/5">
+              <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mb-3">
+                <Icon name="FileText" className="text-white" size={24} />
               </div>
-              <CardTitle className="text-xl sm:text-2xl md:text-3xl">Письменный перевод</CardTitle>
-              <CardDescription className="text-sm sm:text-base md:text-lg">Документы, контракты, сайты</CardDescription>
+              <CardTitle className="text-3xl">Письменный перевод</CardTitle>
+              <CardDescription className="text-lg">Документы, контракты, сайты</CardDescription>
             </CardHeader>
-            <CardContent className="mt-4 sm:mt-5 md:mt-6 flex-1 p-4 sm:p-5 md:p-6">
-              <div className="space-y-2 sm:space-y-3 md:space-y-4">
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">С английского: от 800₽ за страницу</span>
+            <CardContent className="mt-6 flex-1">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">С английского: от 800₽ за страницу</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">С китайского: от 1000₽ за страницу</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">С китайского: от 1000₽ за страницу</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Минимальный заказ: 3 страницы</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Минимальный заказ: 3 страницы</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-primary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Сроки: от 1 рабочего дня</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Сроки: от 1 рабочего дня</span>
                 </div>
               </div>
             </CardContent>
           </Card>
           
           <Card className="overflow-hidden hover:shadow-2xl transition-all border-2 flex flex-col">
-            <CardHeader className="bg-gradient-to-br from-secondary/5 to-primary/5 p-4 sm:p-5 md:p-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mb-2 sm:mb-3">
-                <Icon name="Mic" className="text-white" size={20} />
+            <CardHeader className="bg-gradient-to-br from-secondary/5 to-primary/5">
+              <div className="w-14 h-14 bg-gradient-to-br from-secondary to-primary rounded-xl flex items-center justify-center mb-3">
+                <Icon name="Mic" className="text-white" size={24} />
               </div>
-              <CardTitle className="text-xl sm:text-2xl md:text-3xl">Устный перевод</CardTitle>
-              <CardDescription className="text-sm sm:text-base md:text-lg">Переговоры, встречи, мероприятия</CardDescription>
+              <CardTitle className="text-3xl">Устный перевод</CardTitle>
+              <CardDescription className="text-lg">Переговоры, встречи, мероприятия</CardDescription>
             </CardHeader>
-            <CardContent className="mt-4 sm:mt-5 md:mt-6 flex-1 p-4 sm:p-5 md:p-6">
-              <div className="space-y-2 sm:space-y-3 md:space-y-4">
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-secondary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Английский: 2200₽ в час</span>
+            <CardContent className="mt-6 flex-1">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-secondary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Английский: 2200₽ в час</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-secondary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Китайский: 3800₽ в час</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-secondary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Китайский: 3800₽ в час</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-secondary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Минимальный заказ: 4 часа</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-secondary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Минимальный заказ: 4 часа</span>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <Icon name="CheckCircle2" className="text-secondary mt-0.5 sm:mt-1 flex-shrink-0" size={18} />
-                  <span className="text-sm sm:text-base md:text-lg">Выезд переводчика включён</span>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle2" className="text-secondary mt-1 flex-shrink-0" size={20} />
+                  <span className="text-lg">Выезд переводчика включён</span>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
         
-        <Card className="mt-6 sm:mt-8 md:mt-10 lg:mt-12 max-w-3xl mx-auto border-2 shadow-lg">
-          <CardHeader className="p-4 sm:p-5 md:p-6">
-            <CardTitle className="text-xl sm:text-2xl md:text-3xl text-center">Калькулятор стоимости</CardTitle>
-            <CardDescription className="text-center text-sm sm:text-base md:text-lg mt-1 sm:mt-2">Рассчитайте стоимость перевода</CardDescription>
+        <Card className="mt-12 max-w-3xl mx-auto border-2 shadow-lg">
+          <CardHeader>
+            <CardTitle className="text-3xl text-center">Калькулятор стоимости</CardTitle>
+            <CardDescription className="text-center text-lg mt-2">Рассчитайте стоимость перевода</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 sm:space-y-5 md:space-y-6 p-4 sm:p-5 md:p-6">
+          <CardContent className="space-y-6">
             <div>
-              <label className="block text-sm sm:text-base md:text-lg font-medium mb-2 sm:mb-3">Тип перевода</label>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+              <label className="block text-lg font-medium mb-3">Тип перевода</label>
+              <div className="grid grid-cols-2 gap-4">
                 <Button
                   onClick={() => setCalculatorData({ ...calculatorData, translationType: 'written' })}
                   variant={calculatorData.translationType === 'written' ? 'default' : 'outline'}
-                  className="h-auto py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg min-h-[44px]"
+                  className="h-auto py-4 text-lg"
                 >
-                  <Icon name="FileText" className="mr-1 sm:mr-2" size={18} />
+                  <Icon name="FileText" className="mr-2" size={20} />
                   Письменный
                 </Button>
                 <Button
                   onClick={() => setCalculatorData({ ...calculatorData, translationType: 'oral' })}
                   variant={calculatorData.translationType === 'oral' ? 'default' : 'outline'}
-                  className="h-auto py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg min-h-[44px]"
+                  className="h-auto py-4 text-lg"
                 >
-                  <Icon name="Mic" className="mr-1 sm:mr-2" size={18} />
+                  <Icon name="Mic" className="mr-2" size={20} />
                   Устный
                 </Button>
               </div>
             </div>
             
             <div>
-              <label className="block text-sm sm:text-base md:text-lg font-medium mb-2 sm:mb-3">Язык</label>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+              <label className="block text-lg font-medium mb-3">Язык</label>
+              <div className="grid grid-cols-2 gap-4">
                 <Button
                   onClick={() => setCalculatorData({ ...calculatorData, language: 'english' })}
                   variant={calculatorData.language === 'english' ? 'default' : 'outline'}
-                  className="h-auto py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg min-h-[44px]"
+                  className="h-auto py-4 text-lg"
                 >
                   🇬🇧 Английский
                 </Button>
                 <Button
                   onClick={() => setCalculatorData({ ...calculatorData, language: 'chinese' })}
                   variant={calculatorData.language === 'chinese' ? 'default' : 'outline'}
-                  className="h-auto py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base lg:text-lg min-h-[44px]"
+                  className="h-auto py-4 text-lg"
                 >
                   🇨🇳 Китайский
                 </Button>
@@ -155,33 +155,44 @@ export default function TranslationSection() {
             </div>
             
             <div>
-              <label className="block text-sm sm:text-base md:text-lg font-medium mb-2 sm:mb-3">
+              <label className="block text-lg font-medium mb-3">
                 {calculatorData.translationType === 'written' ? 'Количество страниц' : 'Количество часов'}
               </label>
               <input
-                type="number"
+                type="range"
                 min={calculatorData.translationType === 'written' ? 3 : 4}
+                max={calculatorData.translationType === 'written' ? 50 : 20}
                 value={calculatorData.volume}
-                onChange={(e) => setCalculatorData({ ...calculatorData, volume: parseInt(e.target.value) || 0 })}
-                className="w-full px-3 sm:px-4 py-3 sm:py-4 border-2 rounded-lg text-sm sm:text-base md:text-lg focus:ring-2 focus:ring-primary focus:border-transparent min-h-[44px]"
+                onChange={(e) => setCalculatorData({ ...calculatorData, volume: parseInt(e.target.value) })}
+                className="w-full h-3 bg-gradient-to-r from-primary to-secondary rounded-lg appearance-none cursor-pointer"
+                style={{
+                  background: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%)`
+                }}
               />
-              <p className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-2">
-                Минимум: {calculatorData.translationType === 'written' ? '3 страницы' : '4 часа'}
-              </p>
+              <div className="text-center mt-3">
+                <span className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  {calculatorData.volume}
+                </span>
+                <span className="text-xl text-muted-foreground ml-2">
+                  {calculatorData.translationType === 'written' ? 'стр.' : 'ч.'}
+                </span>
+              </div>
             </div>
             
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-4 sm:p-5 md:p-6 text-center">
-              <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-1 sm:mb-2">Стоимость перевода</p>
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 text-center">
+              <div className="text-muted-foreground mb-2 text-lg">Стоимость</div>
+              <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 {priceResult.min === priceResult.max 
-                  ? `${priceResult.min.toLocaleString()}₽` 
-                  : `${priceResult.min.toLocaleString()}₽ - ${priceResult.max.toLocaleString()}₽`
+                  ? `${priceResult.min.toLocaleString()}₽`
+                  : `${priceResult.min.toLocaleString()} - ${priceResult.max.toLocaleString()}₽`
                 }
-              </p>
+              </div>
             </div>
             
-            <Button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} className="w-full bg-gradient-to-r from-primary to-secondary text-sm sm:text-base md:text-lg py-4 sm:py-5 md:py-6 btn-hover-effect min-h-[44px]">
-              <Icon name="Send" className="mr-1 sm:mr-2" size={18} />
+            <Button 
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })} 
+              className="w-full bg-gradient-to-r from-primary to-secondary text-lg py-6 btn-hover-effect"
+            >
               Заказать перевод
             </Button>
           </CardContent>
