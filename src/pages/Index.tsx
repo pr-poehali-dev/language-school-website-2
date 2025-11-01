@@ -143,8 +143,16 @@ export default function Index() {
         </nav>
       </header>
 
-      <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
-        <div className="container mx-auto text-center max-w-5xl animate-fade-in">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 bg-gradient-to-br from-primary/5 via-white to-secondary/5 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-0 animate-fade-in-slow"
+          style={{
+            backgroundImage: 'url(https://cdn.poehali.dev/files/3105bd0c-5438-47ce-93b4-1e17c561014a.jpg)',
+            opacity: 0.15
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80" />
+        <div className="container mx-auto text-center max-w-5xl animate-fade-in relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             Изучайте языки <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
